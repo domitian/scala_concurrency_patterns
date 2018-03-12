@@ -1,7 +1,7 @@
 package org.learningconcurrency
 
 
-object Chap1 extends App {
+object Excercise1 extends App {
 	def square(x: Int) = x*x
 	println(square(2))
 	// 1

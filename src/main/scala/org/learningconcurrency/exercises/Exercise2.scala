@@ -1,6 +1,6 @@
 package org.learningconcurrency
 
-object Chap2 extends App{
+object Exercise2 extends App{
 
 	// 1
 	def parallel[A,B](a: =>A, b: =>B): (A, B) = {

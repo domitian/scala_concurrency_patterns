@@ -49,9 +49,12 @@ class Filesystem(val root: String) {
 
 	def logMessage(s: String) = messages.offer(s)
 
-	val files: concurrent.Map[String, Entry] = new ConcurrentHashMap().asScala
+	val files: concurrent.Map[String, Entry] = new concurrent.TrieMap()
 	for (f <- FileUtils.iterateFiles(rootDir, null, false).asScala)
 		files.put(f.getName, new Entry(false))
+
+	def allFiles(): Iterable[String] = 
+		for ((name, state) <- files) yield(name)
 
 	def deleteFile(filename: String): Unit = {
 		files.get(filename) match {
