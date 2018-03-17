@@ -3,6 +3,7 @@ package org.learningconcurrency.chapter3
 import org.learningconcurrency._
 import scala.annotation.tailrec
 import scala.concurrent._
+import scala.collection.concurrent._
 import java.util.concurrent.atomic._
 import java.lang._
 
@@ -110,9 +111,9 @@ object Exercise3 extends App {
 	execute(println(d.apply))
 
 	// 7
-	class SyncConcurrentMap extends Map {
+	// class SyncConcurrentMap[A, B] extends Map[A, B] {
 
-	}
+	// }
 
 	// 8
 	import scala.sys.process._
